@@ -1,4 +1,4 @@
-# CTCMrailwaySeg: Railway segmentation of video captures with a transfer of contextual information with unsupervised evaluation
+# CTCMrailwaySeg: Context-aware railway video segmentation with unsupervised evaluation
 
 ## Introduction
 This repository contains the implementation and definitions of methods for our research on railway-track segmentation from forward-facing locomotive video recordings. The goal of the project is to accurately segment the specific rails on which the train is traveling, even in challenging real-world conditions and with limited annotated data. 
@@ -14,3 +14,24 @@ This script implements an end-to-end image-processing pipeline that performs sem
 
 ## process_video.py
 This script implements a video evaluation pipeline that runs three segmentation models in parallel on railway-scene frames: (1) a baseline semantic segmentation using BiSeNetV2, (2) a refined BiSeNetV2 variant with additional sem-cc post-processing, and (3) a CTCM-based rail/track extraction model operating with temporal context. It preprocesses the image, infers the BiSeNetV2 mask, derives an improved mask via sem-cc, and in parallel feeds the frame through a two-stage CTCM pipeline with connected-component selection, morphological erosion, correction heuristics, and optional context propagation/reset based on quality metrics. The three resulting masks are then visualised side by side with the original frame and written into an output video, while detailed per-stage timing (BiSeNet, sem-cc, CTCM) is optionally logged to CSV for performance analysis.
+
+## Dataset
+https://drive.google.com/drive/folders/1_2od14xaShJVESEcVOjxmf-qu-R7iAzW?usp=sharing
+
+## Citation
+
+Please use the citation below for any use of anything in this repository or for any use of the linked dataset. Thank you, authors.
+
+@article{Drah2026,
+  title = {Context-aware railway video segmentation with unsupervised evaluation},
+  volume = {29},
+  ISSN = {1433-755X},
+  url = {http://dx.doi.org/10.1007/s10044-026-01647-6},
+  DOI = {10.1007/s10044-026-01647-6},
+  number = {2},
+  journal = {Pattern Analysis and Applications},
+  publisher = {Springer Science and Business Media LLC},
+  author = {Drahý,  Vojtěch and Mařík,  Radek and K\"{a}lvi\"{a}inen,  Heikki},
+  year = {2026},
+  month = Mar 
+}
