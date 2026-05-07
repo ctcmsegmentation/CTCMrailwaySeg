@@ -22,6 +22,7 @@ https://drive.google.com/drive/folders/1_2od14xaShJVESEcVOjxmf-qu-R7iAzW?usp=sha
 
 Please use the citation below for any use of anything in this repository or for any use of the linked dataset. Thank you, authors.
 
+```bibtex
 @article{Drah2026,
   title = {Context-aware railway video segmentation with unsupervised evaluation},
   volume = {29},
